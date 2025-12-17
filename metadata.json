@@ -1,0 +1,5 @@
+{
+  "name": "ThumbGenie - AI Thumbnail Editor",
+  "description": "A chat-based YouTube thumbnail editor powered by Gemini. Drag and drop your image, then use natural language to edit, remove backgrounds, and composite elements in 16:9 format.",
+  "requestFramePermissions": []
+}
