@@ -940,7 +940,7 @@ const Studio: React.FC = () => {
 
   return (
     <div className="h-dvh bg-black flex justify-center overflow-hidden font-sans text-gray-200">
-      <div className="w-full max-w-[1200px] flex flex-col md:flex-row h-full bg-[#09090b] shadow-2xl relative" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+      <div className="w-full max-w-[1400px] flex flex-col md:flex-row h-full bg-[#09090b] shadow-2xl relative" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
 
         {isCropping && currentImage && <ImageCropper imageSrc={currentImage} onCropComplete={handleCropComplete} onCancel={() => setIsCropping(false)} />}
         {isAddingText && currentImage && <TextOverlayTool imageSrc={currentImage} onApply={handleTextApply} onCancel={() => setIsAddingText(false)} />}
