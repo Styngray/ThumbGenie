@@ -981,7 +981,7 @@ const Studio: React.FC = () => {
           </div>
 
           {/* Canvas Area */}
-          <div className="flex-1 relative flex flex-col items-center justify-center p-4 md:p-6 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-[#09090b] to-[#09090b]">
+          <div className="flex-1 relative flex flex-col items-center justify-center p-0 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-[#09090b] to-[#09090b]">
             {!currentImage && layers.length === 0 ? (
               <div className="text-center space-y-4 pointer-events-none border border-dashed border-white/10 p-10 rounded-3xl bg-white/5 backdrop-blur-sm max-w-[90%] md:max-w-none">
                 <div className="w-20 h-20 bg-black/40 rounded-full mx-auto flex items-center justify-center border border-white/5"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-8 h-8 text-gray-500"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg></div>
@@ -994,16 +994,16 @@ const Studio: React.FC = () => {
             ) : (
               <div className="relative w-full h-full flex flex-col items-center justify-center">
                 {/* Render Layer Stack */}
-                <div className="aspect-video relative shadow-2xl shadow-black rounded-lg overflow-hidden border border-white/5 max-w-full max-h-[calc(100%-5rem)] bg-[#050505] flex items-center justify-center">
+                <div className="relative w-full h-full shadow-2xl shadow-black overflow-hidden max-w-full max-h-full bg-[#050505] flex items-center justify-center">
                   {/* We display currentImage which is the COMPOSITE of all layers */}
                   {currentImage && (
-                    <img src={currentImage} className="w-full h-full object-contain" />
+                    <img src={currentImage} className="w-full h-full object-cover" />
                   )}
 
                   {isLoading && (
-                    <div className="absolute inset-0 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center z-50">
+                    <div className="absolute inset-0 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center z-50 px-4">
                       <GenieLampAnimation />
-                      <p className="text-sm font-bold text-yellow-500 mt-6 tracking-widest uppercase animate-pulse shadow-yellow-500/50 drop-shadow-md">
+                      <p className="text-xs md:text-sm font-bold text-yellow-500 mt-4 tracking-[0.25em] md:tracking-[0.35em] uppercase text-center animate-pulse shadow-yellow-500/50 drop-shadow-md">
                         {loadingState === 'analyzing' ? 'Consulting the Genie...' : 'Granting Your Wish...'}
                       </p>
                     </div>
